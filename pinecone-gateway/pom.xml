@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>gateway</artifactId>
+    <artifactId>pinecone-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>pinecone-gateway</name>
     <packaging>jar</packaging>
