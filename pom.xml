@@ -40,6 +40,10 @@
         <!-- 网关模块 -->
         <module>pinecone-gateway</module>
         <!-- 公共功能提供项目 -->
+        <!-- 消息中心 -->
+        <module>pinecone-mq</module>
+        <!-- netty 通讯 -->
+        <module>pinecone-netty</module>
     </modules>
 
     <dependencies>
