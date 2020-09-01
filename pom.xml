@@ -36,11 +36,14 @@
     <modules>
         <!-- 管理依赖 -->
         <module>pinecone-dependencies</module>
-        <!-- 认证授权中心模块 -->
-        <!-- 网关模块 -->
-        <module>pinecone-gateway</module>
         <!-- 公共模块 -->
         <module>pinecone-common</module>
+        <!-- 网关模块 -->
+        <module>pinecone-gateway</module>
+        <!-- 认证授权中心模块 -->
+        <module>pinecone-auth</module>
+        <!-- 管理后台 -->
+        <module>pinecone-admin</module>
         <!-- 消息中心 -->
         <module>pinecone-mq</module>
         <!-- netty 通讯 -->
