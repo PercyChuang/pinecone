@@ -39,7 +39,8 @@
         <!-- 认证授权中心模块 -->
         <!-- 网关模块 -->
         <module>pinecone-gateway</module>
-        <!-- 公共功能提供项目 -->
+        <!-- 公共模块 -->
+        <module>pinecone-common</module>
         <!-- 消息中心 -->
         <module>pinecone-mq</module>
         <!-- netty 通讯 -->
