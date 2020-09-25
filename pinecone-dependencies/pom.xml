@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cnbai</groupId>
+    <groupId>cn.acorg</groupId>
     <artifactId>pinecone-dependencies</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -12,9 +12,12 @@
     <description>此工程只负责管理依赖</description>
 
     <properties>
-        <!-- Springboot 2.2.x 必须用Hoxton -->
+        <!-- SpringCloud 2.2.x 必须用Hoxton -->
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+        <!-- SpringCloud Alibaba-->
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+        <lombok.version>1.18.10</lombok.version>
+        <hutool-all.version>5.0.6</hutool-all.version>
     </properties>
 
     <dependencyManagement>
@@ -35,6 +38,22 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- lombok start -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!-- lombok end -->
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 

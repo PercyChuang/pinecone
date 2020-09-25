@@ -27,9 +27,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- 输出编码 -->
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
-        <lombok.version>1.18.10</lombok.version>
-        <hutool-all.version>5.0.6</hutool-all.version>
     </properties>
 
     <!-- 管理子模块 -->
@@ -60,31 +57,20 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba.version}</version>
-                <type>pom</type>
-                <!-- 实现多继承 -->
-                <scope>import</scope>
-            </dependency>
+        <dependency>
+            <groupId>cn.acorg</groupId>
+            <artifactId>pinecone-dependencies</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>pom</type>
+            <!-- 实现多继承 -->
+            <scope>import</scope>
+        </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
                 <scope>runtime</scope>
                 <optional>true</optional>
-            </dependency>
-            <!-- lombok start -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-            <!-- lombok end -->
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool-all.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
