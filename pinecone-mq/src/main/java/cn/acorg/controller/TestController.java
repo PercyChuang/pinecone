@@ -1,12 +1,13 @@
 package cn.acorg.controller;
 
-import org.springframework.beans.factory.annotation.Value;
+import cn.acorg.common.enums.rabbitmq.TestQueueEnum;
+import cn.acorg.common.enums.rabbitmq.TestQueueHandler;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.AbstractList;
-import java.util.ArrayList;
 
 /**
  * TODO
@@ -17,16 +18,14 @@ import java.util.ArrayList;
 @RequestMapping("test")
 @RefreshScope
 @RestController
+@Slf4j
 public class TestController {
 
-    @Value("${test.name}")
-    private String name;
 
-    @Value("${test.age}")
-    private String age;
-
-    @RequestMapping("getConfig")
-    public String getConfig() {
-        return "这是目前配置：" + name + "," + age;
+    @RabbitListener(queues = {TestQueueHandler.TEST_1})
+    @RabbitHandler
+    public void process(String content) {
+        log.debug("收到的内容：{}", content);
     }
+
 }

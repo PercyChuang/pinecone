@@ -54,18 +54,18 @@
         </dependency>
         <!-- Spring Cloud End -->
 
-        <!-- rabbitMq -->
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>-->
+        <!-- 引入 pinecone-common 公共服务 -->
+        <dependency>
+            <groupId>cn.acorg</groupId>
+            <artifactId>pinecone-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
     </dependencies>
 
     <build>

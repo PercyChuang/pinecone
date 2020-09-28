@@ -57,14 +57,14 @@
 
     <dependencyManagement>
         <dependencies>
-        <dependency>
-            <groupId>cn.acorg</groupId>
-            <artifactId>pinecone-dependencies</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <type>pom</type>
-            <!-- 实现多继承 -->
-            <scope>import</scope>
-        </dependency>
+            <dependency>
+                <groupId>cn.acorg</groupId>
+                <artifactId>pinecone-dependencies</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <type>pom</type>
+                <!-- 实现多继承 -->
+                <scope>import</scope>
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>

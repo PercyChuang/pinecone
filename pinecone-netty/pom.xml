@@ -60,6 +60,13 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- 引入 pinecone-common 公共服务 -->
+        <dependency>
+            <groupId>cn.acorg</groupId>
+            <artifactId>pinecone-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>

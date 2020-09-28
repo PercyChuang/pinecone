@@ -18,6 +18,7 @@
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
         <lombok.version>1.18.10</lombok.version>
         <hutool-all.version>5.0.6</hutool-all.version>
+        <spring-boot-starter-amqp.version>2.2.1.RELEASE</spring-boot-starter-amqp.version>
     </properties>
 
     <dependencyManagement>
@@ -53,7 +54,12 @@
                 <version>${hutool-all.version}</version>
             </dependency>
 
-
+            <!-- rabbitMq 消息中间件 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-amqp</artifactId>
+                <version>${spring-boot-starter-amqp.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
