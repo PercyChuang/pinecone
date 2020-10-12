@@ -18,7 +18,8 @@
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
         <lombok.version>1.18.10</lombok.version>
         <hutool-all.version>5.0.6</hutool-all.version>
-        <spring-boot-starter-amqp.version>2.2.1.RELEASE</spring-boot-starter-amqp.version>
+        <spring-boot-starter-amqp.version>2.2.5.RELEASE</spring-boot-starter-amqp.version>
+        <fastjson.version>1.2.73</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -59,6 +60,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-amqp</artifactId>
                 <version>${spring-boot-starter-amqp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
