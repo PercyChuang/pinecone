@@ -16,7 +16,7 @@
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <!-- SpringCloud Alibaba-->
         <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
-        <spring-security-oauth2.version>2.3.2.RELEASE</spring-security-oauth2.version>
+        <spring-security-oauth2.version>2.3.6.RELEASE</spring-security-oauth2.version>
         <spring-security-jwt.version>1.1.1.RELEASE</spring-security-jwt.version>
         <!-- 消息中间件 AMQP 协议 -->
         <spring-boot-starter-amqp.version>2.3.2.RELEASE</spring-boot-starter-amqp.version>
