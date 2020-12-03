@@ -1,0 +1,26 @@
+[
+	{
+	"filters": [],
+	"id": "route-1",
+	"order": 0,
+	"predicates": [{
+		"args": {
+			"pattern": "/jd"
+		},
+		"name": "Path"
+	}],
+	"uri": "https://www.jd.com/"
+},
+ {
+	"filters": [],
+	"id": "route-2",
+	"order": 0,
+	"predicates": [{
+		"args": {
+			"pattern": "/tb"
+		},
+		"name": "Path"
+	}],
+	"uri": "https://www.tmall.com"
+}
+]

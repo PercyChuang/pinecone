@@ -24,4 +24,17 @@
     1，发布配置
         首先通过调用 Nacos Open API 向 Nacos Server 发布配置：
         dataId 为 ${prefix}-${spring.profile.active}.${file-extension}
-      
+
+
+### 服务端口号
+    1. nacos (注册与配置中心)               8848
+    2. pinecone-gateway (网关)            8080
+    3. pinecone-auth (授权与鉴权)          8081
+    4. pinecone-common (公共服务)          8082
+    5. pinecone-user (用户服务)            8083
+    6. pinecone-pay (支付服务)             8084
+    7. pinecone-mq                       8092(测试服务)
+    8. pinecone-netty                    8093(测试服务)
+    
+    9. sentinel-dashboard (流控控制台)      8180 
+    10. seata-server (分布式事务管理器)      9200     

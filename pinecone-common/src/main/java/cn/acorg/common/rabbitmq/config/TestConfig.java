@@ -1,6 +1,6 @@
 package cn.acorg.common.rabbitmq.config;
 
-import cn.acorg.common.enums.rabbitmq.TestQueueEnum;
+import cn.acorg.common.enums.rabbitmq.netty.TestQueueEnum;
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

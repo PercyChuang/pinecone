@@ -5,9 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-build</artifactId>
-        <version>2.2.1.RELEASE</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+        <!-- lookup parent from repository -->
         <relativePath/>
     </parent>
 
@@ -33,14 +34,26 @@
     <modules>
         <!-- 管理依赖 -->
         <module>pinecone-dependencies</module>
-        <!-- 公共模块 -->
+        <!-- 框架基础提供 -->
+        <module>pinecone-framework</module>
+        <!-- 服务公共模块 -->
         <module>pinecone-common</module>
+        <!-- model公共模块 -->
+        <module>pinecone-model</module>
+        <!-- entity公共模块 -->
+        <module>pinecone-entity</module>
         <!-- 网关模块 -->
         <module>pinecone-gateway</module>
         <!-- 认证授权中心模块 -->
         <module>pinecone-auth</module>
         <!-- 管理后台 -->
         <module>pinecone-admin</module>
+        <!-- 支付服务 -->
+        <module>pinecone-pay</module>
+        <!-- 用户服务 -->
+        <module>pinecone-user</module>
+
+        <!-- 以下为测试服务 -->
         <!-- 消息中心 -->
         <module>pinecone-mq</module>
         <!-- netty 通讯 -->
@@ -52,6 +65,48 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
+        <!-- lombok start -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- lombok end -->
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
     </dependencies>
 

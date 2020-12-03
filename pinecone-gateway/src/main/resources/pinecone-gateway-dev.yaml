@@ -1,0 +1,102 @@
+# 服务端口号
+server:
+  port: 8080
+
+spring:
+  cloud:
+    # sentinel 连接配置
+    sentinel:
+      nacos-addr: localhost:8848
+      nacos-namespace: 641b6fdc-f21a-4307-b84e-b05286cbb0b2
+      nacos-group-id: SENTINEL_GROUP
+      data-type: json
+      transport:
+        dashboard: 192.168.10.91:8180
+        port: 8092
+      datasource:
+        # 分组与命名空间和服务端保持一致
+        flow:
+          nacos:
+            server-addr: ${spring.cloud.sentinel.nacos-addr}
+            namespace: ${spring.cloud.sentinel.nacos-namespace}
+            data-id: ${spring.application.name}-sentinel-flow-rules
+            group-id: ${spring.cloud.sentinel.nacos-group-id}
+            # 规则类型，取值见：org.springframework.cloud.alibaba.sentinel.datasource.RuleType
+            rule-type: flow
+            data-type: ${spring.cloud.sentinel.data-type}
+        degrade:
+          nacos:
+            server-addr: ${spring.cloud.sentinel.nacos-addr}
+            namespace: ${spring.cloud.sentinel.nacos-namespace}
+            data-id: ${spring.application.name}-sentinel-degrade-rules
+            group-id: ${spring.cloud.sentinel.nacos-group-id}
+            rule-type: degrade
+            data-type: ${spring.cloud.sentinel.data-type}
+        system:
+          nacos:
+            server-addr: ${spring.cloud.sentinel.nacos-addr}
+            namespace: ${spring.cloud.sentinel.nacos-namespace}
+            data-id: ${spring.application.name}-sentinel-system-rules
+            group-id: ${spring.cloud.sentinel.nacos-group-id}
+            rule-type: system
+            data-type: ${spring.cloud.sentinel.data-type}
+        authority:
+          nacos:
+            server-addr: ${spring.cloud.sentinel.nacos-addr}
+            namespace: ${spring.cloud.sentinel.nacos-namespace}
+            data-id: ${spring.application.name}-sentinel-authority-rules
+            group-id: ${spring.cloud.sentinel.nacos-group-id}
+            rule-type: authority
+            data-type: ${spring.cloud.sentinel.data-type}
+        param-flow:
+          nacos:
+            server-addr: ${spring.cloud.sentinel.nacos-addr}
+            namespace: ${spring.cloud.sentinel.nacos-namespace}
+            data-id: ${spring.application.name}-sentinel-param-flow-rules
+            group-id: ${spring.cloud.sentinel.nacos-group-id}
+            rule-type: param-flow
+            data-type: ${spring.cloud.sentinel.data-type}
+        gw-flow:
+          nacos:
+            server-addr: ${spring.cloud.sentinel.nacos-addr}
+            namespace: ${spring.cloud.sentinel.nacos-namespace}
+            data-id: ${spring.application.name}-sentinel-gw-flow-rules
+            group-id: ${spring.cloud.sentinel.nacos-group-id}
+            rule-type: gw-flow
+            data-type: ${spring.cloud.sentinel.data-type}
+
+# Feign 客户端设置
+feign:
+  # 开启 Feign 对 Sentinel 的支持
+  sentinel:
+    enabled: true
+  # Feign 请求/响应压缩
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 4096
+    response:
+      enabled: true
+      useGzipDecoder: true
+
+# Ribbon 配置
+ribbon:
+  # 连接超时（单位：毫秒）
+  ConnectTimeout: 100000
+  # 响应超时（单位：毫秒）
+  ReadTimeout: 100000
+  #同一台实例最大重试次数,不包括首次调用
+  MaxAutoRetries: 1
+  #重试负载均衡其他的实例最大重试次数,不包括首次调用
+  MaxAutoRetriesNextServer: 2
+  #是否所有操作都重试
+  OkToRetryOnAllOperations: false
+
+# 动态路由配置文件 nacos 读取配置
+nacos:
+  address: 127.0.0.1:8848
+  namespace: 641b6fdc-f21a-4307-b84e-b05286cbb0b2
+  data-id: pinecone-gateway-route.json
+  group: DEFAULT_GROUP
+  timeout: 5000

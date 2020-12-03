@@ -6,13 +6,16 @@ import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinitionWriter;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 /**
  * 提供动态路由的基础方法
- * @author ChenXueSong
- * @date 2020-09-29 20:49
+ * @author 松果
+ * @date 2020/11/2 13:17
+ * @version 1.0
  */
+@Service
 public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
 
     @Autowired
@@ -23,9 +26,9 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
     /**
      * 增加路由
      * @param definition 路由定义
+     * @author 松果
+     * @date 2020/11/2 13:16
      * @return java.lang.String
-     * @author ChenXueSong
-     * @date 2020-09-29 20:51
      */
     public String add(RouteDefinition definition) {
         routeDefinitionWriter.save(Mono.just(definition)).subscribe();
@@ -36,9 +39,9 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
     /**
      * 更新路由
      * @param definition 路由定义
+     * @author 松果
+     * @date 2020/11/2 13:18
      * @return java.lang.String
-     * @author ChenXueSong
-     * @date 2020-09-29 20:51
      */
     public String update(RouteDefinition definition) {
         try {
@@ -53,14 +56,14 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
         } catch (Exception e) {
             return "update route  fail";
         }
-
-
     }
 
     /**
      * 删除路由
      * @param id 路由ID
-     * @return
+     * @author 松果
+     * @date 2020/11/2 13:16
+     * @return java.lang.String
      */
     public String delete(String id) {
         try {
