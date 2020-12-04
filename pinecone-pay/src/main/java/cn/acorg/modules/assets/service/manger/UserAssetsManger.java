@@ -1,6 +1,7 @@
 package cn.acorg.modules.assets.service.manger;
 
 import cn.acorg.assets.entity.UserAssetsDO;
+import cn.acorg.modules.assets.dao.UserAssetsMapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.springframework.stereotype.Service;
